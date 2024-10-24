@@ -1,14 +1,18 @@
 ---
 layout: page
 title: "Categories"
+permalink: /categories/
 ---
 
-# Categories
+<h1 class="categories-title">Categories</h1>
 
-Here are the categories of articles available on this site:
+<p class="categories-intro">Here are the categories of articles available on this site:</p>
 
-<ul>
+<ul class="categories-list">
   {% for category in site.categories %}
-    <li><a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}/">{{ category[0] }}</a> ({{ category[1].size }})</li>
+    <li class="category-item">
+      <a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}/" class="category-link">{{ category[0] }}</a> 
+      <span class="category-count">({{ category[1].size }})</span>
+    </li>
   {% endfor %}
 </ul>

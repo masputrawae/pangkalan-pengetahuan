@@ -1,16 +1,18 @@
 ---
 layout: page
 title: "Articles"
+permalink: /articles/
 ---
 
-# Articles
+<h1 class="articles-title">Articles</h1>
 
-Welcome to the articles section! Here you can find a list of all articles published on this site.
+<p class="articles-intro">Welcome to the articles section! Here you can find a list of all articles published on this site.</p>
 
-<ul>
+<ul class="articles-list">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %d, %Y" }}
+    <li class="article-item">
+      <a href="{{ post.url }}" class="article-link">{{ post.title }}</a> - 
+      <span class="article-date">{{ post.date | date: "%B %d, %Y" }}</span>
     </li>
   {% endfor %}
 </ul>

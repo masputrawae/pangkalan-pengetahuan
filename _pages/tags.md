@@ -1,14 +1,18 @@
 ---
 layout: page
 title: "Tags"
+permalink: /tags/
 ---
 
-# Tags
+<h1 class="tags-title">Tags</h1>
 
-Here are the tags used in our articles:
+<p class="tags-intro">Here are the tags used in our articles:</p>
 
-<ul>
+<ul class="tags-list">
   {% for tag in site.tags %}
-    <li><a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}/">{{ tag[0] }}</a> ({{ tag[1].size }})</li>
+    <li class="tag-item">
+      <a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}/" class="tag-link">{{ tag[0] }}</a> 
+      <span class="tag-count">({{ tag[1].size }})</span>
+    </li>
   {% endfor %}
 </ul>

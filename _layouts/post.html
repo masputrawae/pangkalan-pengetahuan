@@ -2,26 +2,26 @@
 layout: default
 ---
 
-<article>
+<article class="post">
   <!-- Judul postingan -->
-  <h1>{{ page.title }}</h1>
+  <h1 class="post-title">{{ page.title }}</h1>
 
   <!-- Tanggal publikasi postingan -->
-  <p><small>Published on {{ page.date | date: "%B %d, %Y" }}</small></p>
+  <p class="post-date"><small>Published on {{ page.date | date: "%B %d, %Y" }}</small></p>
 
   <!-- Konten postingan -->
   <div class="post-content">
     {{ content }}
   </div>
 
-  <hr> <!-- Garis pemisah antara konten dan footer postingan -->
+  <hr class="post-divider"> <!-- Garis pemisah antara konten dan footer postingan -->
 
   <!-- Footer postingan -->
   <div class="post-footer">
     <!-- Kategori postingan -->
-    <p>Posted in: {{ page.categories | join: ", " }}</p>
+    <p class="post-categories">Posted in: {{ page.categories | join: ", " }}</p>
 
     <!-- Tag postingan -->
-    <p>Tags: {{ page.tags | join: ", " }}</p>
+    <p class="post-tags">Tags: {{ page.tags | join: ", " }}</p>
   </div>
 </article>
