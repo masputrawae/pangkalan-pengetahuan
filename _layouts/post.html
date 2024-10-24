@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article>
+  <!-- Judul postingan -->
+  <h1>{{ page.title }}</h1>
+
+  <!-- Tanggal publikasi postingan -->
+  <p><small>Published on {{ page.date | date: "%B %d, %Y" }}</small></p>
+
+  <!-- Konten postingan -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <hr> <!-- Garis pemisah antara konten dan footer postingan -->
+
+  <!-- Footer postingan -->
+  <div class="post-footer">
+    <!-- Kategori postingan -->
+    <p>Posted in: {{ page.categories | join: ", " }}</p>
+
+    <!-- Tag postingan -->
+    <p>Tags: {{ page.tags | join: ", " }}</p>
+  </div>
+</article>
