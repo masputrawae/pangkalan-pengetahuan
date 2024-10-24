@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "Home"
 ---
 
@@ -9,12 +9,13 @@ title: "Home"
 </div>
 
 <section class="recent-posts">
-  <h2 class="section-title">Recent Articles</h2>
-  <ul class="post-list">
-    {% for post in site.posts limit: 5 %}
-      <li class="post-item">
-        <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
-        <p class="post-date"><small>Published on {{ post.date | date: "%B %d, %Y" }}</small></p>
+  <h4 class="section-title">Recent Articles</h4>
+  <ul class="article-list">
+    {% for post in paginator.posts %}
+      <li class="article-item">
+        <a href="{{ post.url | relative_url }}" class="article-link">{{ post.title }}</a>
+        <p class="article-excerpt">{{ post.excerpt | truncatewords: 10 }}</p>
+        <p class="article-date">{{ post.date | date: "%d %B %Y" }}</p> <!-- Tambahkan ini untuk menampilkan tanggal -->
       </li>
     {% endfor %}
   </ul>
@@ -25,13 +26,12 @@ title: "Home"
   <p class="about-description">We are dedicated to providing valuable insights and information. Learn more about us on the <a href="{{ '/about/' | relative_url }}" class="about-link">About</a> page.</p>
 </section>
 
-<section class="categories-section">
-  <h2 class="section-title">Categories</h2>
-  <ul class="category-list">
-    {% for category in site.categories %}
-      <li class="category-item">
-        <a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}/" class="category-link">{{ category[0] }}</a> ({{ category[1].size }})
-      </li>
-    {% endfor %}
-  </ul>
-</section>
+<div class="pagination" style="text-align: center; padding: 2rem;">
+  {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="button">Sebelumnya</a>
+  {% endif %}
+  <span>Halaman {{ paginator.page }} dari {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="button">Selanjutnya</a>
+  {% endif %}
+</div>

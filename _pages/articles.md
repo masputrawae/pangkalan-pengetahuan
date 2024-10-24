@@ -4,15 +4,17 @@ title: "Articles"
 permalink: /articles/
 ---
 
-<h1 class="articles-title">Articles</h1>
-
+<h1 class="articles-title">Daftar Artikel Terbaru</h1>
 <p class="articles-intro">Welcome to the articles section! Here you can find a list of all articles published on this site.</p>
 
-<ul class="articles-list">
-  {% for post in site.posts %}
-    <li class="article-item">
-      <a href="{{ post.url }}" class="article-link">{{ post.title }}</a> - 
-      <span class="article-date">{{ post.date | date: "%B %d, %Y" }}</span>
-    </li>
+<div class="card-container">
+  {% assign sorted_posts = site.posts | sort: 'date' | reverse %} <!-- Mengurutkan postingan berdasarkan tanggal -->
+  {% for post in sorted_posts limit: 20 %} <!-- Batasi jumlah postingan yang ditampilkan -->
+    <div class="card">
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p class="post-date">Dipublikasikan pada: <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
+      <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p> <!-- Cuplikan postingan -->
+      <a class="read-more" href="{{ site.baseurl }}{{ post.url }}">Baca Selengkapnya</a> <!-- Tombol Baca Selengkapnya -->
+    </div>
   {% endfor %}
-</ul>
+</div>

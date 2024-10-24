@@ -1,0 +1,479 @@
+/*================================================================= */
+/*================================================================= */
+/*====================== Bagian default.html ====================== */
+/*====================== Bagian default.html ====================== */
+/*====================== Bagian default.html ====================== */
+/*================================================================= */
+/*================================================================= */
+/*================== Reset default margin dan padding ==================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*================== Gaya umum ==================*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Putih */
+    color: #333333; /* Hitam untuk teks */
+    line-height: 1.6;
+    padding: 0 20px; /* Menambahkan padding pada body untuk ruang di samping */
+    transition: opacity 0.5s ease;
+}
+body.fade-out {
+    opacity: 0;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
+/*================== Header ==================*/
+header {
+    background-color: #f0f0f0; /* Silver untuk header */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #cccccc; /* Garis bawah yang lebih tebal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut di bawah header */
+}
+
+header h2 {
+    font-size: 26px; /* Ukuran font yang sedikit lebih besar */
+    color: #000000; /* Hitam */
+}
+
+/*================== Kontainer utama ==================*/
+.container {
+    display: flex;
+    margin-top: 20px; /* Jarak atas kontainer dari header */
+}
+
+/*================== Menu samping ==================*/
+.main-menu {
+    width: 250px;
+    background-color: #f9f9f9; /* Warna silver terang untuk menu */
+    padding: 20px; /* Padding yang lebih besar untuk estetika */
+    border-right: 1px solid #cccccc;
+    height: calc(100vh - 60px); /* Menjaga menu tetap panjang hingga footer, mengurangi tinggi header */
+    position: sticky; /* Membuat menu tetap di posisi saat scroll */
+    top: 0; /* Menempel di bagian atas */
+    overflow-y: auto; /* Scroll jika konten menu terlalu panjang */
+}
+
+.main-menu .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-menu .logo img {
+    border-radius: 50%; /* Membuat logo bulat */
+    border: 2px solid #cccccc; /* Border di sekitar logo */
+    max-width: 100%; /* Memastikan logo responsif */
+    height: auto; /* Menjaga proporsi logo */
+}
+
+.main-menu h1 {
+    font-size: 22px;
+    margin-top: 10px;
+    color: #000000; /* Hitam */
+}
+
+.main-menu h2 {
+    font-size: 18px;
+    margin: 15px 0 5px;
+    color: #444444; /* Warna abu-abu untuk judul menu */
+}
+
+.main-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-menu ul li {
+    margin: 12px 0; /* Jarak antar item menu */
+}
+
+.main-menu ul li a {
+    text-decoration: none;
+    color: #000000; /* Hitam untuk tautan */
+    padding: 10px 15px; /* Padding yang lebih besar */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus untuk hover */
+}
+
+.main-menu ul li a:hover {
+    background-color: #e0e0e0; /* Efek hover */
+    color: #000000; /* Tetap hitam saat hover */
+}
+/*================== Tombol menu toggle ==================*/
+.menu-toggle {
+    background-color: #f0f0f0; /* Warna background */
+    border: none; /* Menghilangkan border default */
+    padding: 10px 15px; /* Padding tombol */
+    font-size: 18px; /* Ukuran font */
+    cursor: pointer; /* Pointer saat hover */
+    margin-top: 10px; /* Jarak atas */
+    border-radius: 5px; /* Sudut membulat */
+    display: none; /* Sembunyikan tombol di desktop */
+}
+
+/*================== Menu samping (awalnya disembunyikan di perangkat mobile) ==================*/
+.main-menu {
+    display: block; /* Tampilkan menu di desktop */
+}
+
+/*================== Konten utama ==================*/
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff; /* Putih untuk konten */
+    border-left: 1px solid #cccccc; /* Garis pemisah antara menu dan konten */
+    min-height: calc(100vh - 60px); /* Menjaga tinggi konten minimal */
+}
+
+/*================== Footer ==================*/
+footer {
+    background-color: #f0f0f0; /* Silver */
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #cccccc; /* Garis atas yang lebih tebal */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut di atas footer */
+}
+
+footer p {
+    color: #666666; /* Abu-abu untuk teks footer */
+    font-size: 14px; /* Ukuran font yang lebih kecil untuk footer */
+}
+
+/*================== Gaya untuk tautan di footer ==================*/
+footer a {
+    color: #000000; /* Warna tautan hitam */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/*================== Responsif ==================*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Mengubah layout menjadi kolom pada layar kecil */
+    }
+
+    .main-menu {
+        width: 100%; /* Menu memenuhi lebar layar */
+        height: auto; /* Tinggi otomatis */
+        border-right: none; /* Menghilangkan garis pemisah pada menu */
+        border-bottom: 1px solid #cccccc; /* Menambahkan garis pemisah di bawah menu */
+        display: none; /* Sembunyikan menu secara default di mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Tampilkan tombol di perangkat mobile */
+    }
+
+    .main-menu.active {
+        display: block; /* Tampilkan menu ketika aktif */
+    }
+    
+    .content {
+        padding: 15px; /* Padding lebih kecil di konten untuk layar kecil */
+        border-left: none; /* Menghilangkan garis pemisah di konten */
+        border-top: 1px solid #cccccc; /* Menambahkan garis pemisah di atas konten */
+    }
+    
+    header h2 {
+        font-size: 24px; /* Ukuran font yang sedikit lebih kecil di layar kecil */
+    }
+
+    .main-menu h1 {
+        font-size: 20px; /* Ukuran font yang sedikit lebih kecil di layar kecil */
+    }
+
+    .main-menu h2 {
+        font-size: 16px; /* Ukuran font yang sedikit lebih kecil di layar kecil */
+    }
+
+    .main-menu ul li a {
+        padding: 12px; /* Padding yang lebih kecil untuk item menu di layar kecil */
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none; /* Sembunyikan tombol secara default */
+    transition: opacity 0.3s;
+}
+
+.back-to-top.visible {
+    display: block; /* Tampilkan tombol saat perlu */
+    opacity: 0.7;
+}
+
+.back-to-top:hover {
+    opacity: 1; /* Efek hover untuk tombol */
+}
+
+
+/*============================================================== */
+/*============================================================== */
+/*====================== Bagian page.html ====================== */
+/*====================== Bagian page.html ====================== */
+/*====================== Bagian page.html ====================== */
+/*============================================================== */
+/*============================================================== */
+/*================== Bagian Halaman ==================*/
+.page-section {
+    margin: 20px 0; /* Jarak antara section dengan elemen lain */
+    padding: 30px; /* Padding untuk ruang di dalam section */
+    background-color: #ffffff; /* Putih untuk latar belakang */
+    border: 1px solid #dddddd; /* Garis perbatasan yang lebih halus */
+    border-radius: 8px; /* Sudut membulat yang lebih besar untuk kesan lebih lembut */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut yang lebih mendalam */
+}
+
+/*================== Judul Halaman ==================*/
+.page-section h1 {
+    font-size: 32px; /* Ukuran font untuk judul halaman */
+    margin-bottom: 20px; /* Jarak bawah judul */
+    color: #222222; /* Hitam lebih lembut untuk teks */
+    border-bottom: 3px solid #f0f0f0; /* Garis bawah yang lebih tebal untuk membedakan judul */
+    padding-bottom: 12px; /* Jarak bawah judul dari garis */
+    font-weight: 600; /* Menebalkan teks judul */
+}
+
+/*================== Konten Halaman ==================*/
+.page-content {
+    margin-top: 20px; /* Jarak atas konten dari judul */
+    font-size: 18px; /* Ukuran font yang lebih besar untuk konten */
+    color: #444444; /* Warna teks sedikit lebih terang untuk keterbacaan */
+    line-height: 1.8; /* Jarak antar baris untuk keterbacaan yang lebih baik */
+}
+
+/*================== Tautan dalam Konten ==================*/
+.page-content a {
+    color: #007BFF; /* Warna biru untuk tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease; /* Transisi halus untuk warna tautan */
+}
+
+.page-content a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #0056b3; /* Warna yang lebih gelap saat hover untuk kontras yang lebih baik */
+}
+
+/*================== Paragraf dalam Konten ==================*/
+.page-content p {
+    margin-bottom: 15px; /* Jarak antar paragraf */
+}
+
+/*================== Daftar dalam Konten ==================*/
+.page-content ul,
+.page-content ol {
+    padding-left: 20px; /* Jarak dari sisi untuk list */
+    margin-bottom: 15px; /* Jarak bawah untuk daftar */
+}
+
+.page-content li {
+    margin-bottom: 10px; /* Jarak antar item daftar */
+}
+
+/*================== Gaya untuk gambar dalam konten ==================*/
+.page-content img {
+    max-width: 100%; /* Responsif untuk gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    border-radius: 4px; /* Sudut membulat untuk gambar */
+    margin-top: 15px; /* Jarak atas untuk gambar */
+    margin-bottom: 15px; /* Jarak bawah untuk gambar */
+}
+
+/*================== Tombol dalam konten (jika ada) ==================*/
+.page-content .button {
+    display: inline-block; /* Memungkinkan padding dan margin */
+    padding: 10px 20px; /* Padding untuk tombol */
+    background-color: #007BFF; /* Warna latar belakang tombol */
+    color: #ffffff; /* Warna teks tombol */
+    border: none; /* Menghilangkan border default */
+    border-radius: 5px; /* Sudut membulat untuk tombol */
+    text-decoration: none; /* Menghilangkan garis bawah untuk tautan tombol */
+    font-weight: bold; /* Menebalkan teks tombol */
+    transition: background-color 0.3s ease; /* Transisi halus untuk warna tombol */
+}
+
+.page-content .button:hover {
+    background-color: #0056b3; /* Warna tombol saat hover */
+}
+
+/*============================================================== */
+/*============================================================== */
+/*====================== Bagian post.html ====================== */
+/*====================== Bagian post.html ====================== */
+/*====================== Bagian post.html ====================== */
+/*============================================================== */
+/*============================================================== */
+/*================== Artikel Post ==================*/
+.post {
+    margin: 20px 0; /* Jarak antara postingan dengan elemen lain */
+    padding: 30px; /* Padding untuk ruang di dalam postingan */
+    background-color: #ffffff; /* Putih untuk latar belakang */
+    border: 1px solid #dddddd; /* Garis perbatasan yang lebih halus */
+    border-radius: 10px; /* Sudut membulat untuk kesan lebih lembut */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan lembut yang lebih mendalam */
+    transition: box-shadow 0.3s ease; /* Transisi untuk bayangan */
+}
+
+.post:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bayangan lebih kuat saat hover */
+}
+
+/*================== Judul Postingan ==================*/
+.post-title {
+    font-size: 36px; /* Ukuran font untuk judul postingan */
+    margin-bottom: 15px; /* Jarak bawah judul */
+    color: #333333; /* Warna teks judul */
+    font-weight: 700; /* Menebalkan teks judul */
+    line-height: 1.2; /* Jarak antar baris judul */
+}
+
+/*================== Tanggal Publikasi ==================*/
+.post-date {
+    font-size: 14px; /* Ukuran font untuk tanggal */
+    color: #888888; /* Warna abu-abu untuk teks */
+    margin-bottom: 20px; /* Jarak bawah tanggal */
+}
+
+/* ==================Konten Postingan ==================*/
+.post-content {
+    font-size: 18px; /* Ukuran font untuk konten */
+    color: #444444; /* Warna teks */
+    line-height: 1.7; /* Jarak antar baris untuk keterbacaan */
+    margin-bottom: 20px; /* Jarak bawah konten */
+}
+
+/*================== Garis Pemisah ==================*/
+.post-divider {
+    border: none; /* Menghilangkan border default */
+    border-top: 1px solid #eeeeee; /* Garis pemisah */
+    margin: 20px 0; /* Jarak atas dan bawah garis pemisah */
+}
+
+/*================== Footer Postingan ==================*/
+.post-footer {
+    font-size: 16px; /* Ukuran font untuk footer */
+    color: #666666; /* Warna teks footer */
+    margin-top: 20px; /* Jarak atas footer */
+}
+
+/*================== Kategori dan Tag ==================*/
+.post-categories,
+.post-tags {
+    margin: 5px 0; /* Jarak antar kategori dan tag */
+}
+
+/*================== Tautan dalam Footer ==================*/
+.post-footer a {
+    color: #007BFF; /* Warna biru untuk tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transisi halus untuk warna dan garis bawah */
+}
+
+.post-footer a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+    color: #0056b3; /* Warna yang lebih gelap saat hover */
+}
+
+/*================== Gaya untuk daftar dalam konten ==================*/
+.post-content ul,
+.post-content ol {
+    padding-left: 20px; /* Jarak dari sisi untuk list */
+    margin: 15px 0; /* Jarak atas dan bawah untuk daftar */
+    list-style-position: inside; /* Menempatkan bullet atau nomor di dalam kotak */
+}
+
+/*================== Gaya untuk gambar dalam konten ==================*/
+.post-content img {
+    max-width: 100%; /* Responsif untuk gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    border-radius: 5px; /* Sudut membulat untuk gambar */
+    margin: 15px 0; /* Jarak atas dan bawah untuk gambar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk gambar */
+}
+/*============================================================== */
+/*============================================================== */
+/*====================== Bagian social.md ====================== */
+/*====================== Bagian social.md ====================== */
+/*====================== Bagian social.md ====================== */
+/*============================================================== */
+/*============================================================== */
+/* Gaya Umum untuk Halaman Media Sosial */
+.social-media-title {
+    font-size: 2.5em; /* Ukuran font judul */
+    color: #222; /* Warna teks judul */
+    margin: 20px 0; /* Jarak atas dan bawah judul */
+    text-align: center; /* Rata tengah judul */
+}
+
+.social-media-intro {
+    font-size: 1.2em; /* Ukuran font deskripsi */
+    color: #555; /* Warna teks deskripsi */
+    text-align: center; /* Rata tengah deskripsi */
+    margin-bottom: 30px; /* Jarak bawah untuk deskripsi */
+}
+
+/* Gaya untuk Daftar Media Sosial */
+.social-media-list {
+    display: flex; /* Menggunakan Flexbox untuk tata letak */
+    flex-wrap: wrap; /* Mengizinkan pembungkus baris */
+    justify-content: center; /* Rata tengah untuk daftar */
+    list-style: none; /* Menghilangkan gaya default daftar */
+    padding: 0; /* Menghilangkan padding default */
+}
+
+/* Gaya untuk Item Media Sosial */
+.social-media-item {
+    margin: 10px; /* Jarak antar item media sosial */
+}
+
+/* Gaya untuk Tautan Media Sosial */
+.social-media-link {
+    display: inline-block; /* Membuat tautan sebagai blok */
+    width: 50px; /* Lebar ikon */
+    height: 50px; /* Tinggi ikon */
+    background-color: #f4f4f4; /* Warna latar belakang ikon */
+    border-radius: 50%; /* Membuat ikon menjadi bulat */
+    display: flex; /* Menggunakan Flexbox untuk menempatkan ikon */
+    align-items: center; /* Vertikal center */
+    justify-content: center; /* Horizontal center */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
+
+.social-media-link i {
+    font-size: 1.5em; /* Ukuran ikon */
+    color: #333; /* Warna ikon */
+    transition: color 0.3s ease; /* Efek transisi warna */
+}
+
+/* Efek Hover untuk Tautan Media Sosial */
+.social-media-link:hover {
+    background-color: #007BFF; /* Warna latar belakang saat hover */
+    transform: scale(1.1); /* Skala ikon saat hover */
+}
+
+.social-media-link:hover i {
+    color: white; /* Warna ikon saat hover */
+}

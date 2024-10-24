@@ -1,0 +1,118 @@
+/* Gaya Umum untuk Konten Markdown */
+.markdown-body {
+    font-family: Arial, sans-serif; /* Font untuk konten */
+    line-height: 1.75; /* Jarak antar baris untuk keterbacaan */
+    color: #333; /* Warna teks utama */
+    margin: 20px; /* Jarak luar konten */
+}
+
+/* Gaya untuk Heading */
+h1, h2, h3, h4, h5, h6 {
+    color: #222; /* Warna teks heading */
+    margin-top: 1.5em; /* Jarak atas */
+    margin-bottom: 0.5em; /* Jarak bawah */
+    font-weight: bold; /* Membuat teks heading tebal */
+    border-bottom: 2px solid #eaeaea; /* Garis bawah heading */
+    padding-bottom: 0.3em; /* Ruang di bawah heading */
+}
+
+/* Gaya untuk Paragraf */
+p {
+    margin-bottom: 1.2em; /* Jarak bawah untuk paragraf */
+}
+
+/* Gaya untuk Tautan */
+a {
+    color: #007BFF; /* Warna tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transisi saat hover */
+}
+
+a:hover {
+    color: #0056b3; /* Warna lebih gelap saat hover */
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Gaya untuk Daftar */
+ul, ol {
+    margin: 1.5em 0; /* Jarak atas dan bawah untuk daftar */
+    padding-left: 20px; /* Padding kiri untuk indentasi */
+}
+
+/* Gaya untuk Item Daftar */
+li {
+    margin-bottom: 0.5em; /* Jarak bawah untuk item daftar */
+}
+
+/* Gaya untuk Gambar */
+img {
+    max-width: 100%; /* Membatasi lebar gambar agar responsif */
+    height: auto; /* Mengatur tinggi secara otomatis */
+    display: block; /* Mengatur gambar sebagai blok */
+    margin: 1em auto; /* Rata tengah gambar */
+    border-radius: 4px; /* Sudut membulat untuk gambar */
+}
+
+/* Gaya untuk Blok Kutipan */
+blockquote {
+    border-left: 4px solid #007BFF; /* Garis tebal di sebelah kiri */
+    padding: 10px 20px; /* Padding di dalam blok kutipan */
+    margin: 1.5em 0; /* Jarak atas dan bawah untuk blok kutipan */
+    color: #555; /* Warna teks untuk kutipan */
+    background-color: #f8f9fa; /* Warna latar belakang untuk kutipan */
+    border-radius: 4px; /* Sudut membulat untuk blok kutipan */
+}
+
+/* Gaya untuk Kode Inline */
+code {
+    font-family: monospace; /* Font monospace untuk kode */
+    background-color: #f4f4f4; /* Warna latar belakang untuk kode */
+    padding: 2px 4px; /* Padding di dalam kode */
+    border-radius: 4px; /* Sudut membulat untuk kode */
+    color: #d63384; /* Warna teks untuk kode */
+}
+
+/* Gaya untuk Blok Kode */
+pre {
+    background-color: #f4f4f4; /* Warna latar belakang untuk blok kode */
+    padding: 10px; /* Padding di dalam blok kode */
+    border-radius: 4px; /* Sudut membulat untuk blok kode */
+    overflow: auto; /* Memungkinkan scroll jika konten terlalu panjang */
+    white-space: pre-wrap; /* Membungkus teks dalam blok kode */
+    margin: 1.5em 0; /* Jarak atas dan bawah untuk blok kode */
+}
+
+/* Gaya untuk Tabel */
+table {
+    width: 100%; /* Lebar tabel 100% */
+    border-collapse: collapse; /* Menghilangkan jarak antara sel */
+    margin: 20px 0; /* Jarak atas dan bawah untuk tabel */
+}
+
+th, td {
+    border: 1px solid #dddddd; /* Garis perbatasan untuk sel */
+    text-align: left; /* Rata kiri untuk teks dalam sel */
+    padding: 8px; /* Padding di dalam sel */
+}
+
+th {
+    background-color: #007BFF; /* Warna latar belakang untuk header tabel */
+    color: white; /* Warna teks untuk header tabel */
+    font-weight: bold; /* Menebalkan teks header tabel */
+}
+
+/* Gaya untuk Teks yang Digeser (Strikethrough) */
+del {
+    text-decoration: line-through; /* Garis tengah untuk teks yang dihapus */
+    color: #999; /* Warna lebih pucat untuk teks yang dihapus */
+}
+
+/* Gaya untuk Elemen yang Dapat Dibaca */
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+    transition: all 0.2s ease; /* Transisi untuk efek hover */
+}
+
+.markdown-body h1:hover, .markdown-body h2:hover, .markdown-body h3:hover {
+    color: #0056b3; /* Warna saat hover pada heading */
+}
+

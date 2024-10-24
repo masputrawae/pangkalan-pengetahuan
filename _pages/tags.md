@@ -3,16 +3,23 @@ layout: page
 title: "Tags"
 permalink: /tags/
 ---
+<h1 class="tags-title">Daftar Tags dan Postingan</h1>
+<p class="tags-intro">Berikut adalah tags dari artikel yang tersedia di situs ini:</p>
 
-<h1 class="tags-title">Tags</h1>
-
-<p class="tags-intro">Here are the tags used in our articles:</p>
-
-<ul class="tags-list">
-  {% for tag in site.tags %}
+<ul class="tag-list">
+  {% assign all_tags = site.posts | map: 'tags' | flatten | uniq %}
+  {% for tag in all_tags %}
     <li class="tag-item">
-      <a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}/" class="tag-link">{{ tag[0] }}</a> 
-      <span class="tag-count">({{ tag[1].size }})</span>
+      <h3 class="tag-title"> <i class="fas fa-tags"></i> {{ tag }}</h3>
+      <ul class="post-tag-list">
+        {% for post in site.posts %}
+          {% if post.tags contains tag %}
+            <li class="post-tag-item">
+              <a href="{{ site.baseurl }}{{ post.url }}" class="post-link">{{ post.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </li>
   {% endfor %}
 </ul>

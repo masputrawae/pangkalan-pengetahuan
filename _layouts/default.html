@@ -11,14 +11,16 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicons/favicon-16x16.png' | relative_url }}">
   <link rel="manifest" href="{{ '/assets/images/favicons/site.webmanifest' | relative_url }}">
   <!-- Menghubungkan stylesheet -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"> <!--CSS UTAMA-->
+  <link rel="stylesheet" href="{{ '/assets/css/markdown.css' | relative_url }}"> <!--CSS Markdown-->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"> <!--CSS Other-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   
   <!-- Bagian header -->
   <header>
-    <h2>Slogan Atau Kata Sambutan</h2>
+    <h2>Welcome to my blog</h2>
     <button id="menu-toggle" class="menu-toggle"> <b> ☰ </b> </button> <!-- Tombol untuk membuka/menutup menu -->
   </header>
 
@@ -60,11 +62,6 @@
   <footer>
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
   </footer>
-  <script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        var menu = document.querySelector('.main-menu');
-        menu.classList.toggle('active'); // Tambahkan atau hapus kelas 'active'
-    });
-  </script>  
+  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>

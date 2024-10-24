@@ -1,190 +1,524 @@
-/*================== Reset default margin dan padding ==================*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*================================================================ */
+/*================================================================ */
+/*====================== Bagian archives.md ====================== */
+/*====================== Bagian archives.md ====================== */
+/*====================== Bagian archives.md ====================== */
+/*================================================================ */
+/*================================================================ */
+/*================== Judul Halaman Archives ==================*/
+.archive-title {
+    font-size: 42px; /* Ukuran font yang lebih besar untuk judul halaman */
+    margin-bottom: 25px; /* Jarak bawah judul */
+    color: #333333; /* Warna teks judul */
+    font-weight: 700; /* Menebalkan teks judul */
+    text-align: center; /* Rata tengah */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
 }
 
-/*================== Gaya umum ==================*/
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Putih */
-    color: #333333; /* Hitam untuk teks */
-    line-height: 1.6;
-    padding: 0 20px; /* Menambahkan padding pada body untuk ruang di samping */
+/*================== Pengenalan Halaman Archives ==================*/
+.archive-intro {
+    font-size: 20px; /* Ukuran font untuk pengantar */
+    color: #555555; /* Warna teks pengantar */
+    text-align: center; /* Rata tengah */
+    margin-bottom: 40px; /* Jarak bawah pengantar */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
 }
 
-/*================== Header ==================*/
-header {
-    background-color: #f0f0f0; /* Silver untuk header */
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #cccccc; /* Garis bawah yang lebih tebal */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut di bawah header */
+/*================== Daftar Archives ==================*/
+.archive-list {
+    list-style-type: none; /* Menghilangkan bullet dari list */
+    padding: 0; /* Menghilangkan padding default */
 }
 
-header h2 {
-    font-size: 26px; /* Ukuran font yang sedikit lebih besar */
-    color: #000000; /* Hitam */
+/*================== Item dalam Daftar Archives ==================*/
+.archive-item {
+    font-size: 18px; /* Ukuran font untuk item daftar */
+    margin: 15px 0; /* Jarak atas dan bawah antar item */
+    padding: 15px; /* Padding untuk ruang di dalam item */
+    background-color: #f9f9f9; /* Warna latar belakang item */
+    border: 1px solid #dddddd; /* Garis perbatasan halus */
+    border-radius: 8px; /* Sudut membulat untuk item */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi untuk warna latar belakang dan transformasi */
 }
 
-/*================== Kontainer utama ==================*/
-.container {
-    display: flex;
-    margin-top: 20px; /* Jarak atas kontainer dari header */
+.archive-item:hover {
+    background-color: #e9ecef; /* Warna latar belakang saat hover */
+    transform: translateY(-3px); /* Sedikit angkat item saat hover */
 }
 
-/*================== Menu samping ==================*/
-.main-menu {
-    width: 250px;
-    background-color: #f9f9f9; /* Warna silver terang untuk menu */
-    padding: 20px; /* Padding yang lebih besar untuk estetika */
-    border-right: 1px solid #cccccc;
-    height: calc(100vh - 60px); /* Menjaga menu tetap panjang hingga footer, mengurangi tinggi header */
-    position: sticky; /* Membuat menu tetap di posisi saat scroll */
-    top: 0; /* Menempel di bagian atas */
-    overflow-y: auto; /* Scroll jika konten menu terlalu panjang */
+/*================== Tanggal dalam Item ==================*/
+.archive-date {
+    font-weight: bold; /* Menebalkan teks tanggal */
+    color: #007BFF; /* Warna biru untuk tanggal */
+    display: inline-block; /* Membuat tanggal menjadi inline-block */
+    margin-right: 10px; /* Jarak kanan untuk memberi ruang antara tanggal dan tautan */
 }
 
-.main-menu .logo {
-    text-align: center;
-    margin-bottom: 30px;
+/*================== Tautan dalam Item Archives ==================*/
+.archive-link {
+    color: #333333; /* Warna teks tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease; /* Transisi halus untuk warna tautan */
+    font-weight: 600; /* Menebalkan teks tautan untuk penekanan */
 }
 
-.main-menu .logo img {
-    border-radius: 50%; /* Membuat logo bulat */
-    border: 2px solid #cccccc; /* Border di sekitar logo */
-    max-width: 100%; /* Memastikan logo responsif */
-    height: auto; /* Menjaga proporsi logo */
-}
-
-.main-menu h1 {
-    font-size: 22px;
-    margin-top: 10px;
-    color: #000000; /* Hitam */
-}
-
-.main-menu h2 {
-    font-size: 18px;
-    margin: 15px 0 5px;
-    color: #444444; /* Warna abu-abu untuk judul menu */
-}
-
-.main-menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.main-menu ul li {
-    margin: 12px 0; /* Jarak antar item menu */
-}
-
-.main-menu ul li a {
-    text-decoration: none;
-    color: #000000; /* Hitam untuk tautan */
-    padding: 10px 15px; /* Padding yang lebih besar */
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; /* Transisi halus untuk hover */
-}
-
-.main-menu ul li a:hover {
-    background-color: #e0e0e0; /* Efek hover */
-    color: #000000; /* Tetap hitam saat hover */
-}
-/*================== Tombol menu toggle ==================*/
-.menu-toggle {
-    background-color: #f0f0f0; /* Warna background */
-    border: none; /* Menghilangkan border default */
-    padding: 10px 15px; /* Padding tombol */
-    font-size: 18px; /* Ukuran font */
-    cursor: pointer; /* Pointer saat hover */
-    margin-top: 10px; /* Jarak atas */
-    border-radius: 5px; /* Sudut membulat */
-    display: none; /* Sembunyikan tombol di desktop */
-}
-
-/*================== Menu samping (awalnya disembunyikan di perangkat mobile) ==================*/
-.main-menu {
-    display: block; /* Tampilkan menu di desktop */
-}
-
-/*================== Konten utama ==================*/
-.content {
-    flex: 1;
-    padding: 20px;
-    background-color: #ffffff; /* Putih untuk konten */
-    border-left: 1px solid #cccccc; /* Garis pemisah antara menu dan konten */
-    min-height: calc(100vh - 60px); /* Menjaga tinggi konten minimal */
-}
-
-/*================== Footer ==================*/
-footer {
-    background-color: #f0f0f0; /* Silver */
-    text-align: center;
-    padding: 15px;
-    border-top: 2px solid #cccccc; /* Garis atas yang lebih tebal */
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut di atas footer */
-}
-
-footer p {
-    color: #666666; /* Abu-abu untuk teks footer */
-    font-size: 14px; /* Ukuran font yang lebih kecil untuk footer */
-}
-
-/*================== Gaya untuk tautan di footer ==================*/
-footer a {
-    color: #000000; /* Warna tautan hitam */
-    text-decoration: none;
-}
-
-footer a:hover {
+.archive-link:hover {
+    color: #0056b3; /* Warna lebih gelap saat hover */
     text-decoration: underline; /* Garis bawah saat hover */
 }
 
-/*================== Responsif ==================*/
+/*================== Media Queries untuk Responsivitas ==================*/
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Mengubah layout menjadi kolom pada layar kecil */
+    .archive-title {
+        font-size: 34px; /* Ukuran font judul yang lebih kecil untuk perangkat mobile */
     }
 
-    .main-menu {
-        width: 100%; /* Menu memenuhi lebar layar */
-        height: auto; /* Tinggi otomatis */
-        border-right: none; /* Menghilangkan garis pemisah pada menu */
-        border-bottom: 1px solid #cccccc; /* Menambahkan garis pemisah di bawah menu */
-        display: none; /* Sembunyikan menu secara default di mobile */
+    .archive-intro {
+        font-size: 18px; /* Ukuran font pengantar yang lebih kecil untuk perangkat mobile */
     }
 
-    .menu-toggle {
-        display: block; /* Tampilkan tombol di perangkat mobile */
+    .archive-item {
+        font-size: 16px; /* Ukuran font item yang lebih kecil untuk perangkat mobile */
+        padding: 10px; /* Padding yang lebih kecil untuk perangkat mobile */
+    }
+}
+/*================================================================ */
+/*================================================================ */
+/*====================== Bagian articles.md ====================== */
+/*====================== Bagian articles.md ====================== */
+/*====================== Bagian articles.md ====================== */
+/*================================================================ */
+/*================================================================ */
+/*================== Judul Halaman Articles ==================*/
+.articles-title {
+    font-size: 42px; /* Ukuran font yang lebih besar untuk judul halaman */
+    margin-bottom: 15px; /* Jarak bawah judul */
+    color: #222222; /* Warna teks judul yang lebih gelap untuk kontras */
+    font-weight: 700; /* Menebalkan teks judul */
+    text-align: center; /* Rata tengah */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+}
+
+/*================== Pengenalan Halaman Articles ==================*/
+.articles-intro {
+    font-size: 20px; /* Ukuran font untuk pengantar */
+    color: #666666; /* Warna teks pengantar yang lebih lembut */
+    text-align: center; /* Rata tengah */
+    margin-bottom: 30px; /* Jarak bawah pengantar */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+}
+
+/*================== Kontainer Kartu untuk Artikel ==================*/
+.card-container {
+    display: flex; /* Menggunakan Flexbox untuk tata letak */
+    flex-wrap: wrap; /* Membungkus kartu ke baris berikutnya */
+    justify-content: center; /* Rata tengah untuk kartu */
+    gap: 25px; /* Jarak antar kartu yang lebih besar */
+    padding: 0 15px; /* Padding untuk kontainer */
+}
+
+/*================== Kartu untuk Setiap Artikel ==================*/
+.card {
+    background-color: #ffffff; /* Warna latar belakang kartu */
+    border: 1px solid #e0e0e0; /* Garis perbatasan yang lebih halus */
+    border-radius: 10px; /* Sudut membulat untuk kartu */
+    padding: 20px; /* Padding di dalam kartu */
+    width: 300px; /* Lebar tetap untuk kartu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover yang lebih halus */
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Sedikit angkat kartu saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Meningkatkan bayangan saat hover */
+}
+
+/*================== Judul Kartu ==================*/
+.card-title {
+    font-size: 26px; /* Ukuran font untuk judul kartu */
+    margin-bottom: 10px; /* Jarak bawah judul kartu */
+    color: #333333; /* Warna teks judul kartu */
+}
+
+/*================== Tanggal Posting ==================*/
+.post-date {
+    font-size: 14px; /* Ukuran font untuk tanggal */
+    color: #888888; /* Warna teks untuk tanggal */
+    margin-bottom: 10px; /* Jarak bawah tanggal */
+}
+
+/*================== Cuplikan Kartu ==================*/
+.card-excerpt {
+    font-size: 16px; /* Ukuran font untuk cuplikan */
+    color: #444444; /* Warna teks untuk cuplikan */
+    margin-bottom: 15px; /* Jarak bawah cuplikan */
+    line-height: 1.5; /* Jarak antar baris untuk keterbacaan */
+}
+
+/*================== Tautan Baca Selengkapnya ==================*/
+.read-more {
+    display: inline-block; /* Membuat tautan menjadi inline-block */
+    padding: 10px 15px; /* Padding untuk tombol */
+    background-color: #007BFF; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border-radius: 5px; /* Sudut membulat untuk tombol */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transisi untuk hover */
+}
+
+.read-more:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+    transform: scale(1.05); /* Sedikit membesar tombol saat hover */
+}
+
+/*================== Media Queries untuk Responsivitas ==================*/
+@media (max-width: 768px) {
+    .articles-title {
+        font-size: 34px; /* Ukuran font judul yang lebih kecil untuk perangkat mobile */
     }
 
-    .main-menu.active {
-        display: block; /* Tampilkan menu ketika aktif */
-    }
-    
-    .content {
-        padding: 15px; /* Padding lebih kecil di konten untuk layar kecil */
-        border-left: none; /* Menghilangkan garis pemisah di konten */
-        border-top: 1px solid #cccccc; /* Menambahkan garis pemisah di atas konten */
-    }
-    
-    header h2 {
-        font-size: 24px; /* Ukuran font yang sedikit lebih kecil di layar kecil */
+    .articles-intro {
+        font-size: 18px; /* Ukuran font pengantar yang lebih kecil untuk perangkat mobile */
     }
 
-    .main-menu h1 {
-        font-size: 20px; /* Ukuran font yang sedikit lebih kecil di layar kecil */
+    .card {
+        width: 100%; /* Kartu mengambil lebar penuh pada perangkat mobile */
+        max-width: 400px; /* Lebar maksimum untuk kartu */
+    }
+}
+/*================================================================ */
+/*================================================================ */
+/*====================== Bagian articles.md ====================== */
+/*====================== Bagian articles.md ====================== */
+/*====================== Bagian articles.md ====================== */
+/*================================================================ */
+/*================================================================ */
+/*================== Judul Halaman Categories ==================*/
+.categories-title {
+    font-size: 42px; /* Ukuran font yang lebih besar untuk judul halaman */
+    margin-bottom: 15px; /* Jarak bawah judul */
+    color: #222222; /* Warna teks judul yang lebih gelap untuk kontras */
+    font-weight: 700; /* Menebalkan teks judul */
+    text-align: center; /* Rata tengah */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+}
+
+/*================== Pengenalan Halaman Categories ==================*/
+.categories-intro {
+    font-size: 20px; /* Ukuran font untuk pengantar */
+    color: #666666; /* Warna teks pengantar yang lebih lembut */
+    text-align: center; /* Rata tengah */
+    margin-bottom: 30px; /* Jarak bawah pengantar */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+}
+
+/*================== Daftar Kategori ==================*/
+.category-list {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0; /* Menghilangkan padding bawaan */
+}
+
+/*================== Item Kategori ==================*/
+.category-item {
+    margin-bottom: 25px; /* Jarak antar kategori */
+    background-color: #f9f9f9; /* Warna latar belakang untuk item kategori */
+    border: 1px solid #e0e0e0; /* Garis perbatasan yang lebih halus */
+    border-radius: 8px; /* Sudut membulat untuk item kategori */
+    padding: 15px; /* Padding di dalam item kategori */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk warna latar belakang dan bayangan */
+}
+
+.category-item:hover {
+    background-color: #e9ecef; /* Warna latar belakang saat hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
+}
+
+/*================== Judul Kategori ==================*/
+.category-title {
+    font-size: 28px; /* Ukuran font untuk judul kategori */
+    margin-bottom: 10px; /* Jarak bawah judul kategori */
+    color: #333333; /* Warna teks judul kategori */
+    border-bottom: 2px solid #007BFF; /* Garis bawah untuk kategori */
+    padding-bottom: 5px; /* Padding bawah judul kategori */
+}
+
+/*================== Daftar Postingan dalam Kategori ==================*/
+.post-category-list {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding-left: 20px; /* Padding kiri untuk indentasi */
+}
+
+/*================== Item Postingan dalam Kategori ==================*/
+.post-category-item {
+    margin-bottom: 10px; /* Jarak bawah item postingan */
+}
+
+/*================== Tautan Postingan ==================*/
+.post-link {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #007BFF; /* Warna tautan */
+    transition: color 0.3s ease; /* Transisi warna tautan saat hover */
+}
+
+.post-link:hover {
+    color: #0056b3; /* Warna lebih gelap saat hover */
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
+/*================== Media Queries untuk Responsivitas ==================*/
+@media (max-width: 768px) {
+    .categories-title {
+        font-size: 34px; /* Ukuran font judul yang lebih kecil untuk perangkat mobile */
     }
 
-    .main-menu h2 {
-        font-size: 16px; /* Ukuran font yang sedikit lebih kecil di layar kecil */
+    .categories-intro {
+        font-size: 18px; /* Ukuran font pengantar yang lebih kecil untuk perangkat mobile */
     }
 
-    .main-menu ul li a {
-        padding: 12px; /* Padding yang lebih kecil untuk item menu di layar kecil */
+    .category-item {
+        padding: 10px; /* Mengurangi padding untuk item kategori pada perangkat mobile */
     }
+
+    .category-title {
+        font-size: 24px; /* Ukuran font untuk judul kategori yang lebih kecil pada perangkat mobile */
+    }
+}
+/*============================================================ */
+/*============================================================ */
+/*====================== Bagian tags.md ====================== */
+/*====================== Bagian tags.md ====================== */
+/*====================== Bagian tags.md ====================== */
+/*============================================================ */
+/*============================================================ */
+/*================== Judul Halaman Tags ==================*/
+.tags-title {
+    font-size: 44px; /* Ukuran font yang lebih besar untuk judul halaman */
+    margin-bottom: 15px; /* Jarak bawah judul */
+    color: #222222; /* Warna teks judul yang lebih gelap untuk kontras */
+    font-weight: 700; /* Menebalkan teks judul */
+    text-align: center; /* Rata tengah */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    letter-spacing: 1px; /* Jarak antar huruf */
+}
+
+/*================== Pengenalan Halaman Tags ==================*/
+.tags-intro {
+    font-size: 20px; /* Ukuran font untuk pengantar */
+    color: #666666; /* Warna teks pengantar yang lebih lembut */
+    text-align: center; /* Rata tengah */
+    margin-bottom: 30px; /* Jarak bawah pengantar */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+}
+
+/*================== Daftar Tags ==================*/
+.tag-list {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0; /* Menghilangkan padding bawaan */
+}
+
+/*================== Item Tag ==================*/
+.tag-item {
+    margin-bottom: 25px; /* Jarak antar tag */
+    background-color: #f9f9f9; /* Warna latar belakang untuk item tag */
+    border: 1px solid #e0e0e0; /* Garis perbatasan yang lebih halus */
+    border-radius: 10px; /* Sudut membulat untuk item tag */
+    padding: 20px; /* Padding di dalam item tag */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk warna latar belakang dan bayangan */
+}
+
+.tag-item:hover {
+    background-color: #e9ecef; /* Warna latar belakang saat hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
+}
+
+/*================== Judul Tag ==================*/
+.tag-title {
+    font-size: 30px; /* Ukuran font untuk judul tag */
+    margin-bottom: 10px; /* Jarak bawah judul tag */
+    color: #333333; /* Warna teks judul tag */
+    display: flex; /* Menggunakan flexbox untuk ikon dan teks */
+    align-items: center; /* Rata tengah vertikal */
+}
+
+/*================== Ikon Tag ==================*/
+.tag-title i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+    color: #007BFF; /* Warna ikon */
+}
+
+/*================== Daftar Postingan dalam Tag ==================*/
+.post-tag-list {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding-left: 20px; /* Padding kiri untuk indentasi */
+}
+
+/*================== Item Postingan dalam Tag ==================*/
+.post-tag-item {
+    margin-bottom: 10px; /* Jarak bawah item postingan */
+}
+
+/*================== Tautan Postingan ==================*/
+.post-link {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #007BFF; /* Warna tautan */
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Transisi warna tautan saat hover */
+}
+
+.post-link:hover {
+    color: #0056b3; /* Warna lebih gelap saat hover */
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+    font-weight: 500; /* Menambah berat font saat hover */
+}
+
+/*================== Media Queries untuk Responsivitas ==================*/
+@media (max-width: 768px) {
+    .tags-title {
+        font-size: 36px; /* Ukuran font judul yang lebih kecil untuk perangkat mobile */
+    }
+
+    .tags-intro {
+        font-size: 18px; /* Ukuran font pengantar yang lebih kecil untuk perangkat mobile */
+    }
+
+    .tag-item {
+        padding: 15px; /* Mengurangi padding untuk item tag pada perangkat mobile */
+    }
+
+    .tag-title {
+        font-size: 26px; /* Ukuran font untuk judul tag yang lebih kecil pada perangkat mobile */
+    }
+}
+/*=============================================================== */
+/*=============================================================== */
+/*====================== Bagian index.html ====================== */
+/*====================== Bagian index.html ====================== */
+/*====================== Bagian index.html ====================== */
+/*=============================================================== */
+/*=============================================================== */
+/*================== Pengenalan Halaman ==================*/
+.homepage-intro {
+    text-align: center; /* Rata tengah untuk pengantar */
+    margin-bottom: 40px; /* Jarak bawah pengantar */
+    padding: 20px; /* Padding di dalam pengantar */
+    background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+    border-radius: 8px; /* Sudut membulat untuk pengantar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+/*================== Judul Pengenalan ==================*/
+.intro-title {
+    font-size: 48px; /* Ukuran font besar untuk judul */
+    color: #222222; /* Warna teks judul */
+    margin-bottom: 10px; /* Jarak bawah judul */
+}
+
+/*================== Deskripsi Pengenalan ==================*/
+.intro-description {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #666666; /* Warna teks deskripsi */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+}
+
+/*================== Bagian Artikel Terbaru ==================*/
+.recent-posts {
+    margin: 40px 0; /* Jarak atas dan bawah untuk bagian artikel terbaru */
+}
+
+.section-title {
+    font-size: 36px; /* Ukuran font untuk judul bagian */
+    color: #333333; /* Warna teks judul bagian */
+    margin-bottom: 20px; /* Jarak bawah judul bagian */
+    text-align: center; /* Rata tengah */
+}
+
+/*================== Daftar Artikel ==================*/
+.article-list {
+    list-style-type: none; /* Menghilangkan bullet points */
+    padding: 0; /* Menghilangkan padding bawaan */
+}
+
+.article-item {
+    background-color: #ffffff; /* Warna latar belakang untuk item artikel */
+    border: 1px solid #e0e0e0; /* Garis perbatasan halus */
+    border-radius: 8px; /* Sudut membulat untuk item artikel */
+    padding: 15px; /* Padding di dalam item artikel */
+    margin-bottom: 20px; /* Jarak bawah item artikel */
+    transition: box-shadow 0.3s ease; /* Transisi bayangan */
+}
+
+.article-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
+}
+
+/*================== Tautan Artikel ==================*/
+.article-link {
+    font-size: 24px; /* Ukuran font untuk tautan artikel */
+    color: #007BFF; /* Warna tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.article-link:hover {
+    color: #0056b3; /* Warna lebih gelap saat hover */
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
+/*================== Cuplikan Artikel ==================*/
+.article-excerpt {
+    font-size: 16px; /* Ukuran font untuk cuplikan artikel */
+    color: #555555; /* Warna teks cuplikan */
+    margin: 10px 0; /* Jarak atas dan bawah cuplikan */
+}
+
+/*================== Tanggal Artikel ==================*/
+.article-date {
+    font-size: 14px; /* Ukuran font untuk tanggal */
+    color: #999999; /* Warna teks tanggal */
+}
+
+/*================== Navigasi Pagination ==================*/
+.pagination {
+    margin: 20px 0; /* Jarak atas dan bawah untuk pagination */
+}
+
+.button {
+    display: inline-block; /* Menjadikan tombol sebagai blok inline */
+    padding: 10px 20px; /* Padding untuk tombol */
+    margin: 0 10px; /* Jarak antar tombol */
+    background-color: #007BFF; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border-radius: 5px; /* Sudut membulat untuk tombol */
+    transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+
+/*================== Bagian Tentang Kami ==================*/
+.about-section {
+    margin: 40px 0; /* Jarak atas dan bawah untuk bagian tentang */
+    padding: 20px; /* Padding di dalam bagian tentang */
+    background-color: #f8f9fa; /* Warna latar belakang lembut */
+    border-radius: 8px; /* Sudut membulat untuk bagian tentang */
+    text-align: center; /* Rata tengah */
+}
+
+/*================== Deskripsi Tentang Kami ==================*/
+.about-description {
+    font-size: 18px; /* Ukuran font untuk deskripsi */
+    color: #666666; /* Warna teks deskripsi */
+    line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+}
+
+/*================== Tautan di Bagian Tentang Kami ==================*/
+.about-link {
+    color: #007BFF; /* Warna tautan */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Menebalkan teks tautan */
+}
+
+.about-link:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
 }
